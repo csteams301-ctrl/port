@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#15251c" />
+  <title>FarisWorld — Playable Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div id="loading" class="loading-screen">
+    <div class="loading-cube">F</div>
+    <p>BUILDING FARISWORLD</p>
+    <div class="load-track"><span></span></div>
+    <small>PLEASE WAIT, ADVENTURER</small>
+  </div>
+
+  <div id="game" class="game-shell">
+    <div id="world" class="world"></div>
+    <div class="vignette"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#" id="brandHome"><span class="brand-mark">F</span><span>FARIS<span class="brand-muted">WORLD</span></span></a>
+      <div class="top-status"><span class="live-dot"></span> PORTFOLIO WORLD <span class="slash">/</span> KERALA, INDIA</div>
+      <button class="help-button" id="helpButton">HOW TO PLAY ?</button>
+    </header>
+
+    <section class="hero-copy" id="heroCopy">
+      <div class="eyebrow"><span></span> PLAYER PROFILE FOUND</div>
+      <p class="hello">Hey, adventurer. I'm</p>
+      <h1>FARIS<br><em>MOIDEEN C.</em></h1>
+      <div class="role-chip">WEB DEVELOPER <b>+</b> CREATIVE TECHNOLOGIST</div>
+      <p class="hero-desc">Explore my world. Walk into places to discover what I build.</p>
+      <button class="primary-button" id="startButton">ENTER THE WORLD <span>↗</span></button>
+      <p class="tiny-note">WASD / ARROW KEYS TO MOVE · MOUSE TO LOOK</p>
+    </section>
+
+    <aside class="map-card">
+      <div class="map-title">WORLD LOCATIONS <span>5 ZONES</span></div>
+      <button class="location-link active" data-location="home"><span class="loc-icon home-icon">⌂</span><span><b>Home</b><small>Start here</small></span><kbd>1</kbd></button>
+      <button class="location-link" data-location="about"><span class="loc-icon about-icon">i</span><span><b>About</b><small>Meet the player</small></span><kbd>2</kbd></button>
+      <button class="location-link" data-location="projects"><span class="loc-icon projects-icon">▦</span><span><b>Projects</b><small>Explore my builds</small></span><kbd>3</kbd></button>
+      <button class="location-link" data-location="skills"><span class="loc-icon skills-icon">⚒</span><span><b>Skills</b><small>My inventory</small></span><kbd>4</kbd></button>
+      <button class="location-link" data-location="contact"><span class="loc-icon contact-icon">↗</span><span><b>Contact</b><small>Open the portal</small></span><kbd>5</kbd></button>
+    </aside>
+
+    <div class="hud-bottom">
+      <div class="controls-hint"><span class="key-grid"><i>W</i><i>A</i><i>S</i><i>D</i></span><span>MOVE</span><span class="mouse-icon">↕</span><span>LOOK</span><kbd>E</kbd><span>INTERACT</span></div>
+      <div class="coordinates"><span class="live-dot"></span> <span id="zoneName">HOME DISTRICT</span> <span class="slash">/</span> <span id="coords">X 0 · Z 0</span></div>
+    </div>
+
+    <div id="interactionPrompt" class="interaction-prompt hidden"><span class="keycap">E</span><span>Explore this place</span></div>
+
+    <div id="infoPanel" class="info-panel" aria-live="polite">
+      <button class="close-panel" id="closePanel" aria-label="Close details">×</button>
+      <div class="panel-kicker" id="panelKicker">WELCOME / SPAWN POINT</div>
+      <h2 id="panelTitle">Welcome to FarisWorld</h2>
+      <div id="panelBody" class="panel-body">Walk around the world and approach a location to discover more.</div>
+      <div id="panelActions" class="panel-actions"></div>
+    </div>
+
+    <div id="helpModal" class="help-modal hidden">
+      <div class="help-box">
+        <button class="close-panel" id="closeHelp" aria-label="Close help">×</button>
+        <p class="panel-kicker">QUICK GUIDE</p><h2>How to play</h2>
+        <div class="help-row"><kbd>W A S D</kbd><span>Walk around the world</span></div>
+        <div class="help-row"><kbd>← ↑ ↓ →</kbd><span>Alternative movement controls</span></div>
+        <div class="help-row"><kbd>MOUSE</kbd><span>Drag to rotate the camera</span></div>
+        <div class="help-row"><kbd>E</kbd><span>Open a nearby location</span></div>
+        <div class="help-row"><kbd>1 – 5</kbd><span>Teleport to a location</span></div>
+        <p class="help-foot">On mobile, use the on-screen directional pad and location menu.</p>
+        <button class="primary-button" id="resumeButton">LET'S PLAY <span>↗</span></button>
+      </div>
+    </div>
+
+    <div class="mobile-controls" aria-label="Mobile movement controls">
+      <button data-move="forward" aria-label="Move forward">▲</button>
+      <div><button data-move="left" aria-label="Move left">◀</button><button data-move="back" aria-label="Move backward">▼</button><button data-move="right" aria-label="Move right">▶</button></div>
+    </div>
+  </div>
+</body>
+</html>
